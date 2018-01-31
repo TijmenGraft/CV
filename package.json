@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/TijmenGraft/CV/issues"
   },
-  "homepage": "https://github.com/TijmenGraft/CV#readme"
+  "homepage": "https://github.com/TijmenGraft/CV#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
