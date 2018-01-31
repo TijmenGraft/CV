@@ -1,0 +1,23 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "This is my cv application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TijmenGraft/CV.git"
+  },
+  "keywords": [
+    "CV"
+  ],
+  "author": "Tijmen van Graft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TijmenGraft/CV/issues"
+  },
+  "homepage": "https://github.com/TijmenGraft/CV#readme"
+}
