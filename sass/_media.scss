@@ -30,7 +30,6 @@ $desktop-ultra-width: 2560px;
   }
 }
 
-
 @mixin laptop {
 	@media (min-width: #{$desktop-width}) and (max-width: #{$desktop-large-width - 1px}) {
     	@content;
@@ -51,6 +50,12 @@ $desktop-ultra-width: 2560px;
 
 @mixin mobile-only {
   @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin no-mobile {
+  @media (min-width: #{$tablet-width}) {
     @content;
   }
 }

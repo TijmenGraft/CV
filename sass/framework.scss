@@ -1,41 +1,12 @@
 @import 'media';
 @import 'colours';
-
-$font-stack: Helvetica, sans-serif;
+@import 'constants';
 
 body, html {
 	font: 100% $font-stack;
 	width: 100%;
 	height: 100%;
 	margin: 0;
-
-	@include mobile-small {
-		background-color: $base-color;
-	}
-
-	@include mobile-medium {
-		background-color: $contrast-color;
-	}
-
-	@include mobile-large {
-		background-color: $button-accent-color;
-	}
-
-	@include tablet {
-		background-color: $button-warning-color;
-	}
-
-	@include laptop {
-		background-color: $base-color
-	}
-
-	@include desktop {
-		background-color: $background-color;
-	}
-
-	@include ultra-screen {
-		background-color: $contrast-color;
-	}
 }
 
 .container-wrapper {
@@ -48,6 +19,7 @@ body, html {
 	height: 100%;
 	background-color: $base-color;
 	display: inline-block;
+	float: left;
 
 	@include mobile-only {
 		height: 10%;
@@ -55,4 +27,98 @@ body, html {
 	}
 }
 
+.content-jump-wrapper {
+	width: 30%;
+	height: 100%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background-color: $contrast-color;
+	display: inline-block;
+	float: left;
 
+	@include mobile-only {
+		display: none;
+		z-index: 1;
+		height: 100%;
+		width: 80%;
+	}
+
+	.navigation-div {
+		display: inline-block;
+		width: 100%;
+		height: 15%;
+		background-color: $background-link-color;
+		backface-visibility: hidden;
+		-webkit-font-smoothing: subpixel-antialiased;
+		transition: all 200ms ease-in;
+		@include border-bottom(1px, solid, #eee);
+	}
+
+	.navigation-div:hover {
+		background-color: #eee;
+		transition: all 200ms ease-in;
+		box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.65);
+		transform: scaleY(1.5);
+
+		* {
+			transform: scaleY(0.66);
+			text-align: center;
+			margin: 16px;
+		}
+	}
+}
+
+.content-jump-wrapper:hover {
+	overflow-y: scroll;
+}
+
+.current-content-wrapper {
+	width: 60%;
+	height: 100%;
+	background-color: $background-color;
+	display: inline-block;
+	float: left;
+
+	@include mobile-only {
+		margin-top: 10%;
+		z-index: 0;
+		height: 90%;
+		width: 100%;
+	}
+}
+
+.content-header {
+	margin: $margin-desktop;
+	padding: $margin-desktop;
+	width: 90%;
+	background-color: $button-warning-color;
+	border-radius: 16px;
+	text-align: center;
+	color: $background-color;
+
+	@include mobile-only {
+		margin: $margin-mobile;
+		width: 98%;
+	}
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    opacity: 0.1;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

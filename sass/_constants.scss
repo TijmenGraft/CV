@@ -1,0 +1,8 @@
+$font-stack: Helvetica, sans-serif;
+$margin-mobile: 1%;
+$margin-desktop: 2.5%;
+
+@mixin border-bottom($size, $type, $color) {
+	border-bottom: $size $type $color; 
+}
+

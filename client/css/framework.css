@@ -3,27 +3,6 @@ body, html {
   width: 100%;
   height: 100%;
   margin: 0; }
-  @media (min-width: 320px) and (max-width: 374px) {
-    body, html {
-      background-color: #222E50; } }
-  @media (min-width: 375px) and (max-width: 424px) {
-    body, html {
-      background-color: #130303; } }
-  @media (min-width: 425px) and (max-width: 767px) {
-    body, html {
-      background-color: #007991; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    body, html {
-      background-color: #A63446; } }
-  @media (min-width: 1024px) and (max-width: 1439px) {
-    body, html {
-      background-color: #222E50; } }
-  @media (min-width: 1440px) and (max-width: 2559px) {
-    body, html {
-      background-color: #FFFFFA; } }
-  @media (min-width: 2560px) {
-    body, html {
-      background-color: #130303; } }
 
 .container-wrapper {
   width: 100%;
@@ -32,9 +11,89 @@ body, html {
 .menu-wrapper {
   width: 10%;
   height: 100%;
-  background-color: #222E50;
-  display: inline-block; }
+  background-color: #2B4570;
+  display: inline-block;
+  float: left; }
   @media (max-width: 767px) {
     .menu-wrapper {
       height: 10%;
       width: 100%; } }
+
+.content-jump-wrapper {
+  width: 30%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #2C8C99;
+  display: inline-block;
+  float: left; }
+  @media (max-width: 767px) {
+    .content-jump-wrapper {
+      display: none;
+      z-index: 1;
+      height: 100%;
+      width: 80%; } }
+  .content-jump-wrapper .navigation-div {
+    display: inline-block;
+    width: 100%;
+    height: 15%;
+    background-color: #A2AEBB;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: all 200ms ease-in;
+    border-bottom: 1px solid #eee; }
+  .content-jump-wrapper .navigation-div:hover {
+    background-color: #eee;
+    transition: all 200ms ease-in;
+    box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.65);
+    transform: scaleY(1.5); }
+    .content-jump-wrapper .navigation-div:hover * {
+      transform: scaleY(0.66);
+      text-align: center;
+      margin: 16px; }
+
+.content-jump-wrapper:hover {
+  overflow-y: scroll; }
+
+.current-content-wrapper {
+  width: 60%;
+  height: 100%;
+  background-color: #FDFFFF;
+  display: inline-block;
+  float: left; }
+  @media (max-width: 767px) {
+    .current-content-wrapper {
+      margin-top: 10%;
+      z-index: 0;
+      height: 90%;
+      width: 100%; } }
+
+.content-header {
+  margin: 2.5%;
+  padding: 2.5%;
+  width: 90%;
+  background-color: #931621;
+  border-radius: 16px;
+  text-align: center;
+  color: #FDFFFF; }
+  @media (max-width: 767px) {
+    .content-header {
+      margin: 1%;
+      width: 98%; } }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  opacity: 0.1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
