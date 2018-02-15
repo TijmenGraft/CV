@@ -3,16 +3,45 @@
 @import 'constants';
 
 body, html {
-	font: 100% $font-stack;
+	font-family: $font-stack;
 	width: 100%;
 	height: 100%;
 	margin: 0;
+
+	font-weight: 400;
+	font-style: normal;
+	font-size: 21px;
+	line-height: 1.58;
+	letter-spacing: -.003em;
+
+	@include mobile-only {
+		font-size: 18px;
+		line-height: 1.58;
+		letter-spacing: -.004em;
+	}
 }
 
 .container-wrapper {
 	width: 100%;
 	height: 100%;
 	display: flex;
+}
+
+.mobile-menu {
+	display: none;
+	visibility: hidden;
+
+	@include mobile-only {
+		display: block;
+		visibility: visible;
+		height: 15%;
+		width: 100%;
+		background-color: $button-warning-color;
+	}
+
+	* {
+		margin: 0;
+	}
 }
 
 .menu-wrapper {
@@ -41,6 +70,7 @@ body, html {
 	float: left;
 	order: 2;
 
+
 	@include mobile-only {
 		display: none;
 		z-index: 10;
@@ -56,6 +86,9 @@ body, html {
 		transition: all 200ms ease-in;
 		position: relative;
 		z-index: 0;
+		@include ultra-screen {
+			font-size: 125%;
+		}
 
 		.navigation-header {
 			text-align: center;
@@ -63,10 +96,19 @@ body, html {
 			text-decoration: underline;
 			color: white;
 			width: 100%;
+
+			h3 {
+				margin: 0;
+			}
 		}
 
 		.navigation-body {
 			margin: 16px 24px 8px 8px;
+			font-size: 75%;
+
+			@include tablet {
+				font-size: 50%;
+			}
 		}
 	}
 
@@ -74,7 +116,9 @@ body, html {
 		z-index: 10;
 		background-color: $contrast-accent-color;
 		transition: all 200ms ease-in;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.6); 
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+		cursor: pointer;
+
 	}
 }
 
@@ -85,8 +129,12 @@ body, html {
 	background-color: $background-color;
 	display: inline-block;
 	float: left;
+	
 
 	@include mobile-only {
+		font-size: 18px;
+		line-height: 1.58;
+		letter-spacing: -.004em;	
 		position: absolute;
 		margin-top: 10%;
 		z-index: 0;
@@ -114,6 +162,7 @@ body, html {
 	.content-body {
 		margin: $margin-desktop;
 		width: 100% - 2 * $margin-desktop;
+		overflow-y: scroll;
 
 		.content-alinea {
 			margin: $margin-desktop 0;
@@ -126,6 +175,18 @@ body, html {
 					margin: 0 !important;
 				}
 			}
+
+			.content-inline-right-image {
+				width: 20%;
+				margin: $margin-desktop;
+				float: right;
+			}
+
+			.content-inline-left-image {
+				width: 20%;
+				margin: $margin-desktop;
+				float: left;
+			}
 		}
 	}
 }
@@ -133,6 +194,7 @@ body, html {
 ::-webkit-scrollbar {
     width: 14px;
     height: 18px;
+    z-index: 10;
 }
 ::-webkit-scrollbar-thumb {
     height: 6px;
@@ -141,12 +203,18 @@ body, html {
     -webkit-border-radius: 7px;
     background-color: rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+
 }
 ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
     display: none;
+    z-index: 10;
+
 }
 ::-webkit-scrollbar-corner {
     background-color: transparent;
+    z-index: 10;
+
 }
