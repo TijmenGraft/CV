@@ -6,18 +6,22 @@ body, html {
 
 .container-wrapper {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  display: flex; }
 
 .menu-wrapper {
   width: 10%;
   height: 100%;
   background-color: #2B4570;
   display: inline-block;
-  float: left; }
+  float: left;
+  order: 1; }
   @media (max-width: 767px) {
     .menu-wrapper {
-      height: 10%;
-      width: 100%; } }
+      display: none;
+      z-index: 1;
+      height: 100%;
+      width: 20%; } }
 
 .content-jump-wrapper {
   width: 30%;
@@ -26,13 +30,14 @@ body, html {
   overflow-x: hidden;
   background-color: #2C8C99;
   display: inline-block;
-  float: left; }
+  float: left;
+  order: 2; }
   @media (max-width: 767px) {
     .content-jump-wrapper {
       display: none;
-      z-index: 1;
+      z-index: 10;
       height: 100%;
-      width: 80%; } }
+      width: 70%; } }
   .content-jump-wrapper .navigation-div {
     display: inline-block;
     width: 100%;
@@ -56,30 +61,43 @@ body, html {
   overflow-y: scroll; }
 
 .current-content-wrapper {
-  width: 60%;
+  order: 3;
+  width: 100%;
   height: 100%;
   background-color: #FDFFFF;
   display: inline-block;
   float: left; }
   @media (max-width: 767px) {
     .current-content-wrapper {
+      position: absolute;
       margin-top: 10%;
       z-index: 0;
       height: 90%;
       width: 100%; } }
-
-.content-header {
-  margin: 2.5%;
-  padding: 2.5%;
-  width: 90%;
-  background-color: #931621;
-  border-radius: 16px;
-  text-align: center;
-  color: #FDFFFF; }
-  @media (max-width: 767px) {
-    .content-header {
-      margin: 1%;
-      width: 98%; } }
+  .current-content-wrapper .content-header {
+    margin: 2.5%;
+    padding: 2.5%;
+    width: 90%;
+    background-color: #931621;
+    border-radius: 16px;
+    text-align: center;
+    color: #FDFFFF; }
+    @media (max-width: 767px) {
+      .current-content-wrapper .content-header {
+        margin: 0;
+        padding: 1%;
+        border-radius: initial;
+        width: 98%; } }
+  .current-content-wrapper .content-body {
+    margin: 2.5%;
+    width: 95%; }
+    .current-content-wrapper .content-body .content-alinea {
+      margin: 2.5% 0; }
+      .current-content-wrapper .content-body .content-alinea .content-alinea-header {
+        color: #931621;
+        font-family: DauphinPlain; }
+        .current-content-wrapper .content-body .content-alinea .content-alinea-header h1 {
+          margin: 0 !important; }
 
 /* width */
 ::-webkit-scrollbar {

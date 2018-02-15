@@ -25,9 +25,7 @@ app.use(
 
 app.use(express.static(__dirname + '/client')); 
 
-app.get('/', function(req,res) {
-	res.send("hello world");
-})
+require('./modules/router')(app);
 
 var server = app.listen('80', function() {
 	var host = server.address().address;
