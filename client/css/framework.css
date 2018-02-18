@@ -83,6 +83,9 @@ body, html {
     .content-jump-wrapper .navigation-div .navigation-body {
       margin: 16px 24px 8px 8px;
       font-size: 75%; }
+      @media (min-width: 1024px) and (max-width: 2559px) {
+        .content-jump-wrapper .navigation-div .navigation-body {
+          font-size: 67%; } }
       @media (min-width: 768px) and (max-width: 1023px) {
         .content-jump-wrapper .navigation-div .navigation-body {
           font-size: 50%; } }
@@ -100,6 +103,9 @@ body, html {
   background-color: #FDFFFF;
   display: inline-block;
   float: left; }
+  @media (min-width: 768px) {
+    .current-content-wrapper {
+      overflow-y: scroll; } }
   @media (max-width: 767px) {
     .current-content-wrapper {
       font-size: 18px;
@@ -126,8 +132,10 @@ body, html {
         width: 98%; } }
   .current-content-wrapper .content-body {
     margin: 2.5%;
-    width: 95%;
-    overflow-y: scroll; }
+    width: 95%; }
+    @media (max-width: 767px) {
+      .current-content-wrapper .content-body {
+        overflow-y: scroll; } }
     .current-content-wrapper .content-body .content-alinea {
       margin: 2.5% 0; }
       .current-content-wrapper .content-body .content-alinea .content-alinea-header {

@@ -106,6 +106,10 @@ body, html {
 			margin: 16px 24px 8px 8px;
 			font-size: 75%;
 
+			@include computer-visitor-normal-screen {
+				font-size: 67%;
+			}
+
 			@include tablet {
 				font-size: 50%;
 			}
@@ -129,7 +133,10 @@ body, html {
 	background-color: $background-color;
 	display: inline-block;
 	float: left;
-	
+
+	@include no-mobile {
+		overflow-y: scroll;	
+	}
 
 	@include mobile-only {
 		font-size: 18px;
@@ -162,7 +169,9 @@ body, html {
 	.content-body {
 		margin: $margin-desktop;
 		width: 100% - 2 * $margin-desktop;
-		overflow-y: scroll;
+		@include mobile-only {
+			overflow-y: scroll;
+		}
 
 		.content-alinea {
 			margin: $margin-desktop 0;

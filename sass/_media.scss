@@ -59,3 +59,9 @@ $desktop-ultra-width: 2560px;
     @content;
   }
 }
+
+@mixin computer-visitor-normal-screen {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-ultra-width - 1px}) {
+    @content;
+  }
+}
