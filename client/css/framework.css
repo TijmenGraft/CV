@@ -45,6 +45,19 @@ body, html {
       z-index: 1;
       height: 100%;
       width: 20%; } }
+  .menu-wrapper .menu-link-wrapper {
+    width: 100%;
+    height: 7vw;
+    background-color: #007991;
+    margin-top: 1vw;
+    box-shadow: inset 0 0 10px #0f0; }
+  .menu-wrapper :first-child {
+    margin-top: 0; }
+  .menu-wrapper :active {
+    box-shadow: inset 0 0 10px #0f0;
+    background-color: #2B4570; }
+  .menu-wrapper :hover {
+    background-color: green; }
 
 .content-jump-wrapper {
   width: 30%;
