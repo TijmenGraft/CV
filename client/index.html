@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curriculum vitea</title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$.ajax({
+			url: "/main",
+			success: function(msg) {
+				$('body').css(
+					"background-color", "#ff00ff"
+				)
+				console.log(msg);
+			}
+		})
+	</script>
+</body>
+</html>
