@@ -58,6 +58,27 @@ body, html {
 		height: 100%;
 		width: 20%;
 	}
+
+	.menu-link-wrapper {
+		width: 100%;
+		height: 7vw;
+		background-color: $button-accent-color;
+		margin-top: 1vw;
+		box-shadow: inset 0 0 10px #0f0;
+	}
+
+	:first-child {
+		margin-top: 0;
+	}
+
+	:active {
+		box-shadow: inset 0 0 10px #0f0;
+		background-color: $base-color;
+	}
+
+	:hover {
+		background-color: green;
+	}
 }
 
 .content-jump-wrapper {

@@ -8,6 +8,12 @@ module.exports = function(app) {
 
 	app.get('/:map', function(req, res,next) {
 		console.log(req.params.map);
+	app.get('/', function(req, res, next) {
+		res.render('index.ejs');
+	})
+
+	app.get('/:map/:conent', function(req,res,next) {
+		console.log(req.map);
 		next();
 	});
 
