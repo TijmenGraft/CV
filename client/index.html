@@ -2,12 +2,18 @@
 <html>
 <head>
 	<title>Curriculum vitea</title>
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		$.ajax({
 			url: "/main",
+			type: "post",
+			data: {
+				token: "testtoken"
+			},
+			dataType: "html",
 			success: function(msg) {
 				$('body').css(
 					"background-color", "#ff00ff"
